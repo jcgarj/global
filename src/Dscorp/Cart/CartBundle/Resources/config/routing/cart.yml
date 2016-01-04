@@ -1,0 +1,43 @@
+cart:
+    path:     /
+    defaults: { _controller: "CartBundle:Default:cart" }
+
+cart_show:
+    path:     /{id}/show
+    defaults: { _controller: "CartBundle:cart:show" }
+
+cart_new:
+    path:     /new
+    defaults: { _controller: "CartBundle:cart:new" }
+
+cart_create:
+    path:     /create
+    defaults: { _controller: "CartBundle:cart:create" }
+    methods:  POST
+
+cart_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "CartBundle:cart:edit" }
+
+cart_update:
+    path:     /{id}/update
+    defaults: { _controller: "CartBundle:cart:update" }
+    methods:  [POST, PUT]
+
+cart_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "CartBundle:cart:delete" }
+    methods:  [POST, DELETE]
+
+Default_cart:
+    path:     /cart
+    defaults: { _controller: "CartBundle:Default:cart" }
+
+cart_prod:
+    path:     /{id}/prod
+    defaults: { _controller: "AdminBundle:AdminProd:prod" }
+
+cart_revisar:
+    path:     /{id}/revisar
+    defaults: { _controller: "CartBundle:cart:revisar" }
+

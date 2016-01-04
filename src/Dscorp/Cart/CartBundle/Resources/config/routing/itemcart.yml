@@ -1,0 +1,31 @@
+itemcart:
+    path:     /
+    defaults: { _controller: "CartBundle:itemCart:index" }
+
+itemcart_show:
+    path:     /{id}/show
+    defaults: { _controller: "CartBundle:itemCart:show" }
+
+itemcart_new:
+    path:     /new
+    defaults: { _controller: "CartBundle:itemCart:new" }
+
+itemcart_create:
+    path:     /add
+    defaults: { _controller: "CartBundle:itemCart:add" }
+    methods:  POST
+
+itemcart_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "CartBundle:itemCart:edit" }
+
+itemcart_update:
+    path:     /{id}/update
+    defaults: { _controller: "CartBundle:itemCart:update" }
+    methods:  [POST, PUT]
+
+itemcart_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "CartBundle:itemCart:delete" }
+    methods:  [POST, DELETE]
+

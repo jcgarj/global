@@ -1,0 +1,27 @@
+Dscorp\Cart\CartBundle\Entity\itemCart:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        cantidad:
+            type: integer
+        precioU:
+            type: decimal
+        date:
+            type: datetime
+    manyToOne:
+        cart:
+            targetEntity: Dscorp\Cart\CartBundle\Entity\cart
+            mappedBy: itemCart
+        AdminProd:
+          targetEntity: Dscorp\Cart\AdminBundle\Entity\AdminProd
+          inversedBy: itemCart 
+          joinColumn:
+             name: AdminProd_id
+             referencedColumnName: id
+    lifecycleCallbacks: {  }

@@ -1,0 +1,11 @@
+cart_itemcart:
+    resource: "@CartBundle/Resources/config/routing/itemcart.yml"
+    prefix:   /itemcart
+
+cart_cart:
+    resource: "@CartBundle/Resources/config/routing/cart.yml"
+    prefix:   /cart
+
+cart_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: CartBundle:Default:index }

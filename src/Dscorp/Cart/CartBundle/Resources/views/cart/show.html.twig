@@ -1,0 +1,40 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>cart</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Estatus</th>
+                <td>{{ entity.estatus }}</td>
+            </tr>
+            <tr>
+                <th>Llave</th>
+                <td>{{ entity.llave }}</td>
+            </tr>
+            <tr>
+                <th>Datecart</th>
+                <td>{{ entity.dateCart|date('Y-m-d H:i:s') }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('cart') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('cart_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

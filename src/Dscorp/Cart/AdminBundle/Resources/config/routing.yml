@@ -1,0 +1,7 @@
+admin_adminprod:
+    resource: "@AdminBundle/Resources/config/routing/adminprod.yml"
+    prefix:   /adminprod
+
+admin_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: AdminBundle:Default:index }

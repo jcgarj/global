@@ -1,0 +1,30 @@
+adminprod:
+    path:     /
+    defaults: { _controller: "AdminBundle:AdminProd:index" }
+
+adminprod_show:
+    path:     /{id}/show
+    defaults: { _controller: "AdminBundle:AdminProd:show" }
+
+adminprod_new:
+    path:     /new
+    defaults: { _controller: "AdminBundle:AdminProd:new" }
+
+adminprod_create:
+    path:     /create
+    defaults: { _controller: "AdminBundle:AdminProd:create" }
+    methods:  POST
+
+adminprod_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AdminBundle:AdminProd:edit" }
+
+adminprod_update:
+    path:     /{id}/update
+    defaults: { _controller: "AdminBundle:AdminProd:update" }
+    methods:  [POST, PUT]
+
+adminprod_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AdminBundle:AdminProd:delete" }
+    methods:  [POST, DELETE]

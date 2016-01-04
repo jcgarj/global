@@ -1,0 +1,20 @@
+Dscorp\Cart\CartBundle\Entity\cart:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        estatus:
+            type: string
+            length: '50'
+        llave:
+            type: string
+            length: '50'
+        dateCart:
+            type: datetime
+            column: DateCart
+    lifecycleCallbacks: {  }

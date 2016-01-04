@@ -1,0 +1,38 @@
+<div class="cart">     
+<i class="icon-shopping-cart">
+	
+</i> <h3>Carro de Compras</h3>                     
+{% set counter = 0 %}                      
+	{% if totalitems > 0 %}                      
+	{% set counter = 1 %}
+	{% for line in cartLines %}                             
+	<li><a href="{{ path('admonprod_show', { 'id': line.id, 'nombre': line.nombre }) }}"></a>
+
+				                	<div class="mini-cart-detail">
+				                 	 <h5>{{line.nombre }}</h5>
+				                  	<em>Cantidad: 1 </em>
+				                  	<p> {% if line.precioAnte > 0 %}<span>${{line.precioAnte}}</span> {% endif %}$ {{line.precio}}</p>
+				                	</div>
+				              </li>
+				              {% set counter = counter + line.precio %}
+				        {% endfor %} 
+		            {% else %}
+		            	<p class="empty">Carro vacio</p>
+		           {% endif %}
+
+
+		            {% if totalitems > 0 %}
+				        <div class="mini-cart-total">
+				            <ul>
+				              <li>Sub-Total <span>$ {{counter}}</span></li>
+				             <!-- <li>Eco Tax <span>&euro; 2.00</span></li>
+				              <li>VAT <span>&euro; 17.68</span></li>-->
+				            </ul>
+				            <p class="total">Total(+envio) <span>$ {{counter}}</span> 
+				        </div>
+				        <div class="checkout">
+				        	<a href="{{ path('carrito_show', { 'id': carrito.id }) }}" class="btn">Ver productos</a> 
+				        	<a href="{{ path('carrito_revisar', { 'id': carrito.id }) }}" class="btn btn-checkout">Pagar</a></div>
+				        
+			        {% endif %}
+</div>

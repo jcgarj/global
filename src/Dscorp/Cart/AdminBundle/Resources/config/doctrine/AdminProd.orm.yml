@@ -1,0 +1,21 @@
+Dscorp\Cart\AdminBundle\Entity\AdminProd:
+    type: entity
+    table: null
+    repositoryClass: Dscorp\Cart\AdminBundle\Entity\ProductoRepositorio
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        caracteristicas:
+            type: string
+            length: '150'
+        precioU:
+            type: decimal
+    oneToMany:
+        itemCart:
+            targetEntity:  Dscorp\Cart\CartBundle\Entity\itemCart
+            mappedBy: AdminProd
+    lifecycleCallbacks: {  }

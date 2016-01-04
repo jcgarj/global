@@ -1,0 +1,75 @@
+{% block body %}
+<div class="container">
+  <div class="row">
+    <div class="span12"> 
+        
+      <h1>Confirmar Pedido </h1>
+      <p class="small-desc"></p>
+      
+      <!-- Alert -->
+      {% if totalItemNumber > 0 %}
+                  
+               
+      <!-- Cart -->
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Caracteristicas</th>
+            <th>Precio Unitario</th>
+            <!--<th>Cantidad</th>-->
+            
+          </tr>
+        {% set foo = 0 %}
+          {% for line in cartLines %}
+            <tr>
+            <td>{{line.caracteristicas}}</td>  
+            <td>{{line.precioU}}</td>
+               <td>{{ render(controller( 'CartBundle:itemCart:show', { 'id': line.itemCart.0.id } )) }}</td>
+            </tr>
+                   {% set foo = foo + line.precio %}
+          {% endfor %}   
+          </thead>
+        
+      </table>
+      
+      <table class="table table-striped">
+       <!-- Cart Total -->
+      <div class="main-cart-total">
+        <thead>
+          <tr>
+          <th>Sub-Total <span>  ${{foo}}</span></th>
+          <th>Envio <span> $0</span></th>
+          </tr>
+        
+        <p class="total">Total <span> ${{foo}}</span> 
+      </div>
+      </thead>
+    </table>
+       <div class="main-checkout">
+
+          <button class="btn">
+            <a class="btn" href="{{ path('itemcart_alldelete', { 'id': carrito.id }) }}">Limpiar productos</a>
+          </button>
+        </div>
+
+          <button class="btn btn-success">
+            <a class="btn" href="#">Pagar</a>
+          </button> 
+              
+          <button class="btn btn-success">
+            <a  class="btn" href="#">Continuar Comprando</a>
+          </button>
+    
+       {% else %}               
+      <div class="alert alert-info">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <strong>Aun no tienes productos!</strong> 
+      </div>
+       {% endif %}
+     
+    </div>
+  </div>
+
+</div>
+</table>
+{% endblock  %}

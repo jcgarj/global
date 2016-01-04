@@ -1,0 +1,181 @@
+<?php
+
+namespace Dscorp\Cart\CartBundle\Entity;
+
+/**
+ * itemCart
+ */
+class itemCart
+{
+    /**
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var integer
+     */
+    private $cantidad;
+
+    /**
+     * @var string
+     */
+    private $precioU;
+
+    /**
+     * @var \DateTime
+     */
+    private $date;
+
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set cantidad
+     *
+     * @param integer $cantidad
+     *
+     * @return itemCart
+     */
+    public function setCantidad($cantidad)
+    {
+        $this->cantidad = $cantidad;
+
+        return $this;
+    }
+
+    /**
+     * Get cantidad
+     *
+     * @return integer
+     */
+    public function getCantidad()
+    {
+        return $this->cantidad;
+    }
+
+    /**
+     * Set precioU
+     *
+     * @param string $precioU
+     *
+     * @return itemCart
+     */
+    public function setPrecioU($precioU)
+    {
+        $this->precioU = $precioU;
+
+        return $this;
+    }
+
+    /**
+     * Get precioU
+     *
+     * @return string
+     */
+    public function getPrecioU()
+    {
+        return $this->precioU;
+    }
+
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     *
+     * @return itemCart
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+    /**
+     * @var \Dscorp\Cart\CartBundle\Entity\cart
+     */
+    private $Cart;
+
+
+    /**
+     * Set cart
+     *
+     * @param \Dscorp\Cart\CartBundle\Entity\cart $cart
+     *
+     * @return itemCart
+     */
+    public function setCart(\Dscorp\Cart\CartBundle\Entity\cart $cart = null)
+    {
+        $this->Cart = $cart;
+
+        return $this;
+    }
+
+    /**
+     * Get cart
+     *
+     * @return \Dscorp\Cart\CartBundle\Entity\cart
+     */
+    public function getCart()
+    {
+        return $this->Cart;
+    }
+    /**
+     * @var \Dscorp\Cart\CartBundle\Entity\cart
+     */
+    private $cart;
+
+    /**
+     * @var \Dscorp\Cart\AdminBundle\Entity\AdminProd
+     */
+    private $adminProd;
+
+
+    /**
+     * Set adminProd
+     *
+     * @param \Dscorp\Cart\AdminBundle\Entity\AdminProd $adminProd
+     *
+     * @return itemCart
+     */
+    public function setAdminProd(\Dscorp\Cart\AdminBundle\Entity\AdminProd $adminProd = null)
+    {
+        $this->adminProd = $adminProd;
+
+        return $this;
+    }
+
+    /**
+     * Get adminProd
+     *
+     * @return \Dscorp\Cart\AdminBundle\Entity\AdminProd
+     */
+    public function getAdminProd()
+    {
+        return $this->adminProd;
+    }
+    /**
+     * @var \Dscorp\Cart\AdminBundle\Entity\AdminProd
+     */
+    private $AdminProd;
+
+
+}

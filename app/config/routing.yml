@@ -1,0 +1,8 @@
+admin:
+    resource: "@AdminBundle/Resources/config/routing.yml"
+    prefix:   /
+
+cart:
+    resource: "@CartBundle/Resources/config/routing.yml"
+    prefix:   /
+
